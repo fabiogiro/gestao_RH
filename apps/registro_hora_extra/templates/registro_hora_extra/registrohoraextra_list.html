@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
+    {% for registro in object_list %}
+        <a href="{% url 'hora_extra_edit' registro.id %}">{{ registro }}</a>
+        <a href="{% url 'hora_extra_delete' registro.id %}">Deletar</a>
+        <br>
+    {% endfor %}
+
+    {% if not object_list%}
+        <h4>Não há registros</h4>
+    {% endif %}
+<a href="{% url 'hora_extra_create' %}" class="btn btn-info">Novo</a>
+{% endblock %}

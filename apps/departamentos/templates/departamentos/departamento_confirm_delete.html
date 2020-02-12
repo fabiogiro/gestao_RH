@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+templates/departamentos/departamento_confirm_delete.html
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        <h1>Confirma a exclusão: {{ obj }}</h1>
+        {{ form }}
+        <button type="submit" class="btn btn-danger">Excluir</button>
+    </form>
+{% endblock %}
